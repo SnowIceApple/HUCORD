@@ -1,0 +1,92 @@
+
+/* header */
+
+body{
+    font-family: 'Pretendard', sans-serif;
+}
+
+#header{
+    width: 100%;
+    position: fixed;
+}
+
+.header_box{
+    position: relative;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo{
+    margin-top: -3px;
+}
+
+.logo a{
+    display: block;
+}
+
+.logo a svg{
+    width: 210px;
+    height: auto;
+}
+
+.header_content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.nav_box{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#nav{
+    flex: 0 1 auto;
+    height: 100%;
+    transition: all .6s ease;
+}
+
+#nav:hover{
+    flex: 1 1 auto;
+}
+
+.nav_floor1{
+    display: flex;
+    height: 100%;
+}
+
+#nav:hover .nav_floor1{
+    width: 100%;
+}
+
+.nav_floor1 > li{
+    flex: auto 1 0;
+    height: 100%;
+    transition: all .6s ease;
+}
+
+#nav:hover .nav_floor1 > li{
+    flex: 1 1 auto;
+}
+
+.nav_floor1 > li > a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 0 20px;
+    white-space: nowrap;
+}
+
+.header_util{
+    width: 150px;
+    height: 100%;
+}
