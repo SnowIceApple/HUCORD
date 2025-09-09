@@ -1,9 +1,18 @@
 
-/* header */
+:root{
+    --color1-: #009944;
+}
 
 body{
     font-family: 'Pretendard', sans-serif;
 }
+
+.container{
+    max-width: 1840px;
+    margin: 0 auto;
+}
+
+/* header */
 
 #header{
     width: 100%;
@@ -50,12 +59,14 @@ body{
     transition: all .6s ease;
 }
 
+#nav:focus,
 #nav:hover{
     flex: 1 1 auto;
 }
 
 .nav_floor1{
     display: flex;
+    flex-wrap: wrap;
     height: 100%;
 }
 
@@ -64,13 +75,15 @@ body{
 }
 
 .nav_floor1 > li{
-    flex: auto 1 0;
+    position: relative;
+    flex: 1 1 0;
     height: 100%;
     transition: all .6s ease;
 }
 
 #nav:hover .nav_floor1 > li{
-    flex: 1 1 auto;
+    /* flex: 1; */
+    width: calc(100% / 6);
 }
 
 .nav_floor1 > li > a{
@@ -81,12 +94,76 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 17px;
-    font-weight: 500;
-    padding: 0 20px;
+    font-weight: 600;
+    padding: 0 30px;
     white-space: nowrap;
+    transition: color 0.5s;
+    letter-spacing: -0.1px;
+}
+
+.nav_floor1 > li:focus > a,
+.nav_floor1 > li:hover > a{
+    color: var(--color1-);
+}
+
+.nav_floor2{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 400px;
+    padding: 14px 0;
+    transition: background 0.5s;
+}
+
+.nav_floor1 > li:focus .nav_floor2,
+.nav_floor1 > li:hover .nav_floor2{
+    background: rgba(0, 153, 68, 0.04);
+}
+
+.nav_floor2 > li{
+    width: 100%;
+}
+
+.nav_floor2 > li > a{
+    display: inline-block;
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    transition: color 0.5s;
+    line-height: 1.5;
+    letter-spacing: -0.2px;
+}
+
+.nav_floor2 > li:not(:has(.nav_floor3)) > a:focus,
+.nav_floor2 > li:not(:has(.nav_floor3)) > a:hover{
+    color: var(--color1-);
+}
+
+.nav_floor3{
+    width: 100%;
+    padding-bottom: 6px;
+}
+
+.nav_floor3 > li{
+    width: 100%;
+}
+
+.nav_floor3 > li > a{
+    display: block;
+    font-size: 15px;
+    color: #666;
+    padding: 9px 15px;
+    transition: color .5s;
+}
+
+.nav_floor3 > li > a:hover,
+.nav_floor3 > li > a:focus{
+    color: var(--color1-);
 }
 
 .header_util{
     width: 150px;
     height: 100%;
 }
+
