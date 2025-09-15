@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>    
     <script src="./js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
 </head>
 <body>
     <div id="wrap">
@@ -205,32 +207,174 @@
                                                 <li><a href="#">공여제대혈의 우수성</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">제대혈 조혈모세포 이식</a></li>
-                                        <li><a href="#">연혁</a></li>
-                                        <li><a href="#">사업소개</a></li>
-                                        <li><a href="#">특허 및 논문</a></li>
+                                        <li>
+                                            <a href="#">제대혈 조혈모세포 이식</a>
+                                            <ul class="nav_floor3">
+                                                <li><a href="#">제대혈 vs 골수 조혈모세포 이식</a></li>
+                                                <li><a href="#">제대혈 조혈모세포 이식 치료</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">휴코드 제대혈 은행</a></li>
+                                        <li><a href="#">제대혈 보관 확인 및 연장 신청</a></li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="#">제대혈 줄기세포 R&D</a>
+                                    <ul class="nav_floor2">
+                                        <li>
+                                            <a href="#">제대혈 줄기세포 소개</a>
+                                            <ul class="nav_floor3">
+                                                <li><a href="#">줄기세포란?</a></li>
+                                                <li><a href="#">제대혈 줄기세포 특징</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">휴코드의 기술력</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="#">제대혈 줄기세포 배양액</a>
+                                    <ul class="nav_floor2">
+                                        <li><a href="#">HSCM 소개</a></li>
+                                        <li><a href="#">제조과정</a></li>
+                                        <li><a href="#">주요효과</a></li>
+                                        <li><a href="#">주요성분</a></li>
+                                        <li><a href="#">타사 배양액과 비교</a></li>
+                                        <li><a href="#">효능에 대한 연구</a></li>
+                                        <li><a href="#">시험성적서</a></li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="#">Investors</a>
+                                    <ul class="nav_floor2">
+                                        <li><a href="#">휴코드홀딩스</a></li>
+                                        <li><a href="#">휴코드</a></li>
+                                        <li><a href="#">휴코드랩</a></li>
+                                        <li><a href="#">휴코드바이오</a></li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="#">Notice</a>
+                                    <ul class="nav_floor2">
+                                        <li><a href="#">소식</a></li>
+                                        <li><a href="#">인재채용</a></li>
+                                        <li>
+                                            <a href="#">고객지원</a>
+                                            <ul class="nav_floor3">
+                                                <li><a href="#">고객센터</a></li>
+                                                <li><a href="#">FAQ</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </nav>
                     </div>
-                    <div class="header_util"></div>
+                    <div class="header_util">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="hu_ico">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000"><path d="M237.69-100q-23.53 0-40.61-17.08T180-157.69v-484.62q0-23.53 17.08-40.61T237.69-700h99.62v-17.31q0-59.92 41.38-101.3Q420.08-860 480-860t101.31 41.39q41.38 41.38 41.38 101.3V-700h99.62q23.53 0 40.61 17.08T780-642.31v484.62q0 23.53-17.08 40.61T722.31-100H237.69Zm0-45.39h484.62q4.61 0 8.46-3.84 3.84-3.85 3.84-8.46v-484.62q0-4.61-3.84-8.46-3.85-3.84-8.46-3.84h-99.62v97.3q0 9.67-6.56 16.18-6.57 6.52-16.31 6.52-9.74 0-16.13-6.52-6.38-6.51-6.38-16.18v-97.3H382.69v97.3q0 9.67-6.56 16.18-6.57 6.52-16.31 6.52-9.74 0-16.13-6.52-6.38-6.51-6.38-16.18v-97.3h-99.62q-4.61 0-8.46 3.84-3.84 3.85-3.84 8.46v484.62q0 4.61 3.84 8.46 3.85 3.84 8.46 3.84Zm145-554.61h194.62v-17.31q0-41.07-28.12-69.19-28.11-28.11-69.19-28.11t-69.19 28.11q-28.12 28.12-28.12 69.19V-700Zm-157.3 554.61V-654.61-145.39Z"/></svg>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="lang_select">
+                                <a href="#">
+                                    <div class="hu_ico">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000"><path d="M480-100q-79.38 0-148.73-29.96t-120.85-81.27q-51.5-51.31-80.96-120.96Q100-401.85 100-481.62q0-79.38 29.46-148.42 29.46-69.04 80.96-120.34 51.5-51.31 120.85-80.46Q400.62-860 480-860t148.73 29.16q69.35 29.15 120.85 80.46 51.5 51.3 80.96 120.34Q860-561 860-481.62q0 79.77-29.46 149.43-29.46 69.65-80.96 120.96-51.5 51.31-120.85 81.27Q559.38-100 480-100Zm0-43.39q37.31-40.23 61.38-87.3 24.08-47.08 39.47-110.31H379.77q15.15 62.31 39.23 110.11 24.08 47.81 61 87.5Zm-63.46-8.15q-28.08-36.46-49.73-84.88-21.66-48.43-34.04-104.58H173.54q38.38 77.54 96.46 122.46 58.08 44.93 146.54 67Zm127.92-.61q78.54-17.62 142-66.7 63.46-49.07 100-122.15H627.85q-14.93 56.31-36.08 104.35-21.16 48.03-47.31 84.5ZM158.92-386.38h165.54q-3.77-27.39-4.84-50.43-1.08-23.04-1.08-44.81 0-24.23 1.38-45.84 1.39-21.62 5.16-46.77H158.92q-7.38 23.23-10.46 44.92-3.07 21.69-3.07 47.69 0 26.39 3.07 49 3.08 22.62 10.46 46.24Zm212.16 0h218.46q4.38-30.23 5.77-51.47 1.38-21.23 1.38-43.77 0-21.53-1.38-41.96-1.39-20.42-5.77-50.65H371.08q-4.39 30.23-5.77 50.65-1.39 20.43-1.39 41.96 0 22.54 1.39 43.77 1.38 21.24 5.77 51.47Zm263.84 0h166.16q7.38-23.62 10.46-46.24 3.07-22.61 3.07-49 0-26-3.07-47.69-3.08-21.69-10.46-44.92H635.92q3.39 33.08 4.77 53.88 1.39 20.81 1.39 38.73 0 22.39-1.7 44-1.69 21.62-5.46 51.24Zm-7.69-233.23h159.23q-35.31-76.7-97.81-125.2t-145.19-64.04q28.08 37.77 49.04 84.81t34.73 104.43Zm-247.46 0h202.08q-13.31-56.47-39.5-106.54-26.2-50.08-62.35-89.23-33.92 31.23-57.27 77.15t-42.96 118.62Zm-206.23 0h159.85q12.53-55.54 33-102.08 20.46-46.54 49.15-86.54-82.69 15.92-144.08 63.61-61.38 47.7-97.92 125.01Z"/></svg>
+                                    </div>
+                                </a>
+                                <ul class="lang_list">
+                                    <li><a href="#">한국어</a></li>
+                                    <li><a href="#">English</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 </div>
             </div>
         </header>
+        <main id="main">
+            <div class="main_container">
+                <div class="main_txt_box">
+                    <div class="main_txt_divider mtd1">
+                        <h2>
+                            Specializing
+                            <span>in</span>
+                        </h2>
+                    </div>
+                    <div class="main_txt_divider mtd2">
+                        <h2>
+                            <span>Stem</span>
+                            Cells
+                        </h2>
+                    </div>
+                </div>
+                <div class="main_visual_slide_box">
+                    <div class="main_visual_slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="mvs_video_box">
+                                    <video src="./img/192281-892475127.mp4" playsinline autoplay muted loop></video>
+                                </div>
+                                <div class="mvs_container">
+                                    <div class="mvs_txt">
+                                        <h2>
+                                            <span>Redefining Boundaries</span> 
+                                            <span>in Biotechnology</span>
+                                        </h2>
+                                        <p>
+                                            <span>휴코드는 생명공학의 새로운 가능성을 열어가며 혁신의 한계에 도전합니다.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="mvs_video_box">
+                                    <video src="./img/204565-924698132_small.mp4" playsinline autoplay muted loop></video>
+                                </div>
+                                <div class="mvs_container">
+                                    <div class="mvs_txt">
+                                        <h2>
+                                            <span>Beyond Science,</span>
+                                            <span>Embracing Possibilities</span>
+                                        </h2>
+                                        <p>
+                                            <span>휴코드는 과학을 통해 더 나은 삶과 행복을 추구합니다.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="mvs_video_box">
+                                    <video src="./img/197486-905015022_small.mp4" playsinline autoplay muted loop></video>
+                                </div>
+                                <div class="mvs_container">
+                                    <div class="mvs_txt">
+                                        <h2>
+                                            <span>Bridging Humanity and Biotech for</span>
+                                            <span>Global Health Innovations</span>
+                                        </h2>
+                                        <p>
+                                            <span>휴코드는 인류와 생명공학을 연결하여 전세계인의 건강한 삶을 위한 해결책을 제시합니다.</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mvs_pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <section id="main_about">
+            <div class="section_inner">
+
+            </div>
+        </section>
     </div>
 </body>
 </html>

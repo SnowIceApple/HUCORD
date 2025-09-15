@@ -78,14 +78,6 @@ img{
 	max-width: 100%;
 }
 
-figcaption{
-	font-size: 1px;
-	position: absolute;
-	overflow: hidden;
-	text-indent: -9999px;
-	color: transparent;
-}
-
 input[type="search"]{
 	border-radius: 0;
 }
@@ -130,4 +122,20 @@ body{
 
 #wrap{
     width: 100%;
+}
+
+html{
+    font-size: 1.756vh;
+}
+
+@property --percent {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
 }
