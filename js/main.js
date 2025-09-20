@@ -17,7 +17,7 @@ $(document).ready(function(){
     });
 
     
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
     function mainTxtToSplitTxt(){
         var mainTxt = document.querySelectorAll('.mvs_txt h2');
@@ -50,6 +50,7 @@ const swiper1 = new Swiper('.main_visual_slider', {
 
   pagination: {
     el: '.mvs_pagination',
+    clickable: true,
   },
 
   navigation: {
@@ -73,6 +74,10 @@ $(window).on('load', function(){
   redefineMvsTxtHeight();
 });
 
+$(window).on('resize', function(){
+  redefineMvsTxtHeight();
+});
+
 
     swiper1.on('slideChangeTransitionEnd', function(){
         redefineMvsTxtHeight();
@@ -92,7 +97,6 @@ $(window).on('load', function(){
         end: '150% top',
         toggleActions: "play reverse none reverse",
         invalidateOnRefresh: true,
-        markers: true,
       }
     });
 
@@ -130,5 +134,59 @@ $(window).on('load', function(){
       delay: -7,
       duration: 15,
     });
+
+    var windowWidth = $(window).outerWidth();
+    var swiper2 = undefined;
+
+    function mainAboutSlide(){
+
+      if(windowWidth < 1300 && swiper2 == undefined){
+        const swiper2 = new Swiper('.about_list_slide', {
+          direction: 'horizontal',
+          loop: true,
+          slidesPerView: 'auto',
+
+        });
+      }
+      else if(windowWidth >= 1300 && swiper2 !== undefined){
+        swiper2.destroy();
+        swiper2 = undefined;
+      }
+    }
+
+    mainAboutSlide();
+
+    $(window).on('resize', function(){
+      windowWidth = $(window).outerWidth();
+      mainAboutSlide();
+    });
+
+    var sectionTitAni = document.querySelectorAll('.section_tit.ani');
+    var sTAniRes = 30;
+
+    sectionTitAni.forEach((sTAni) => {
+      var sectionTitAniSpan = sTAni.querySelector('h2 span');
+      var aniSpanActive = new SplitType(sectionTitAniSpan, { types: 'chars' });
+
+      let tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.section_tit.ani',
+          start: '150% bottom',
+          markers: true,
+        },
+
+      });
+      tl2.from(aniSpanActive.chars, {
+        filter: 'blur(8px)',
+        duration: 0.7,
+        opacity: 0,
+        x: sTAniRes,
+        stagger: {amount: 0.8},
+        once: true,
+      });
+
+    });
+
+    window.addEventListener("resize", ScrollTrigger.refresh());
 
 });
