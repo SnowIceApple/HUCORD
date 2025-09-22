@@ -32,7 +32,7 @@ section{
     position: fixed;
     z-index: 1000;
     background: #fff;
-    transition: height .6s 0s ease, box-shadow .1s 0s ease, background 0.3s;
+    transition: height .6s 0s ease, box-shadow .1s 0s ease, background 0.3s, transform 0.5s;
 }
 
 .navActive #header{
@@ -541,9 +541,54 @@ section{
 }
 
 .mvs_pagination .swiper-pagination-bullet{
-    width: 1.813rem;
-    height: 1.813rem;
+    position: relative;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
+    background: transparent !important;
+    opacity: 1;
+}
+
+.mvs_pagination .swiper-pagination-bullet::before{
+    display: block;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.mvs_pagination .swiper-pagination-bullet svg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: 100% !important;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    overflow: visible !important;
+}
+
+.mvs_pagination .swiper-pagination-bullet svg circle{
+    stroke-dasharray: 157;
+    stroke-dashoffset: 157;
+    stroke-width: 1.5 !important;
+}
+
+.mvs_pagination .swiper-pagination-bullet-active svg circle{
+    animation: circleAni1 5s linear forwards;
+}
+
+@keyframes circleAni1{
+    to{
+        stroke-dasharray: 157;
+        stroke-dashoffset: 0;
+    }
 }
 
 /* main_about */
@@ -557,6 +602,12 @@ section{
     margin-bottom: 2.813rem;
 }
 
+.section_tit h2{
+    display: inline-block;
+    overflow: hidden;
+    padding-right: 20px;
+}
+
 .section_tit h2 span{
     display: inline-block;
     font-size: 5.5rem;
@@ -566,6 +617,7 @@ section{
 }
 
 .section_tit h2 strong{
+    display: inline-block;
     font-size: 5rem;
     font-weight: 700;
     font-family: var(--Font2-);
@@ -625,11 +677,12 @@ section{
     word-break: keep-all;
 }
 
-.altp_more{
+.more_btn{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-end;
-    width: 240px;
+    width: 180px;
 }
 
 .about_list_slide_box{
@@ -793,3 +846,143 @@ section{
     transform: translateX(-50%) rotate(-45deg);
     -webkit-transform: translateX(-50%) rotate(-45deg);
 }
+
+/* main_overview */
+
+.overview_list{
+    width: 100%;
+}
+
+.overview_list ul{
+    display: flex;
+    gap: 0 1.875rem;
+}
+
+.overview_list ul li{
+    position: relative;
+    width: 100%;
+    flex: 1;
+    height: auto;
+    background: #f5f5f5;
+    overflow: hidden;
+    transition: all .5s;
+}
+
+.overview_list ul li.active{
+    flex: 1.8;
+    border-radius: 2.5rem;
+}
+
+.ovl_img{
+    position: relative;
+    width: 100%;
+    height: 32.5vw;
+    overflow: hidden;
+    transition: all .5s;
+    will-change: transform;
+}
+
+.overview_list ul li:not(.active) .ovl_img{
+    opacity: 0;
+}
+
+.ovl_img::after{
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+}
+
+
+.ovl_img figure{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ovl_img figure img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.ovl_content{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 2.5rem;
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ovl_txt{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.188rem 0;
+}
+
+.ovl_tit{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.overview_list ul li.active .ovl_ico img{
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+.ovl_tit h3{
+    display: inline-block;
+    margin: 1.25rem 0 0 0;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.5;
+}
+
+.overview_list ul li.active .ovl_tit h3{
+    color: #fff;
+    margin: 1.25rem 0;
+}
+
+.ovl_tit p{
+    font-size: 1.063rem;
+    color: #fff;
+    line-height: 1.7;
+    overflow: hidden;
+    max-height: 150px;
+    visibility: visible;
+    transition: all .5s;
+}
+
+.overview_list ul li:not(.active) .ovl_tit p{
+    max-height: 0;
+    visibility: hidden;
+}
+
+.overview_list ul li .more_btn{
+    visibility: hidden;
+    margin-right: -240px;
+    transition: all .5s;
+}
+
+.overview_list ul li.active .more_btn{
+    visibility: visible;
+    margin-right: 0;
+}
+
+

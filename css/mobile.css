@@ -70,7 +70,13 @@
         font-size: 1.875rem;
     }
 
+}
 
+@media screen and (max-width: 1600px){
+    
+    .more_btn{
+        width: 180px;
+    }
 }
 
 @media screen and (min-width: 1300px){

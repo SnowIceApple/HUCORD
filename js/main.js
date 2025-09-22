@@ -16,9 +16,6 @@ $(document).ready(function(){
         }
     });
 
-    
-gsap.registerPlugin(ScrollTrigger);
-
     function mainTxtToSplitTxt(){
         var mainTxt = document.querySelectorAll('.mvs_txt h2');
         var mainSplitTxt = new SplitType(mainTxt, {types: 'words'});
@@ -51,6 +48,14 @@ const swiper1 = new Swiper('.main_visual_slider', {
   pagination: {
     el: '.mvs_pagination',
     clickable: true,
+    renderBullet: function(index, className){
+      var circleSvg1 = '<circle r="15" cx="15" cy="15" fill="none" stroke="#fff">';
+      return '<span class="' + className + '">' +
+      '<svg>' +
+          circleSvg1 +
+      '</svg>' +    
+          '</span>';
+    },
   },
 
   navigation: {
@@ -135,6 +140,12 @@ $(window).on('resize', function(){
       duration: 15,
     });
 
+    tl1.to('#header', {
+      delay: 2,
+      duration: 0,
+      y: -90,
+    });
+
     var windowWidth = $(window).outerWidth();
     var swiper2 = undefined;
 
@@ -165,17 +176,17 @@ $(window).on('resize', function(){
     var sTAniRes = 30;
 
     sectionTitAni.forEach((sTAni) => {
-      var sectionTitAniSpan = sTAni.querySelector('h2 span');
+      var sectionTitAniSpan = sTAni.querySelector('span');
+      var sectionTitAniStrong = sTAni.querySelector('strong');
       var aniSpanActive = new SplitType(sectionTitAniSpan, { types: 'chars' });
 
       let tl2 = gsap.timeline({
         scrollTrigger: {
           trigger: '.section_tit.ani',
           start: '150% bottom',
-          markers: true,
         },
-
       });
+
       tl2.from(aniSpanActive.chars, {
         filter: 'blur(8px)',
         duration: 0.7,
@@ -185,6 +196,28 @@ $(window).on('resize', function(){
         once: true,
       });
 
+      tl2.from(sectionTitAniStrong, {
+        yPercent: 100,
+        duration: 0.5,
+        once: true,
+      });
+
+    });
+
+    gsap.to('.altp_img figure img', {
+      duration: 1.5,
+      clipPath: 'circle(100% at 56% 41%)',
+      opacity: 1,
+      once: true,
+      scrollTrigger: {
+        trigger: '.altp_img',
+        start: '70% bottom',
+      },
+
+    });
+
+    $('.overview_list ul li').on('mouseenter focusin keyup', function(){
+      $(this).addClass('active').siblings().removeClass('active');
     });
 
     window.addEventListener("resize", ScrollTrigger.refresh());
