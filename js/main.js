@@ -204,20 +204,39 @@ $(window).on('resize', function(){
 
     });
 
-    gsap.to('.altp_img figure img', {
-      duration: 1.5,
-      clipPath: 'circle(100% at 56% 41%)',
-      opacity: 1,
-      once: true,
-      scrollTrigger: {
-        trigger: '.altp_img',
-        start: '70% bottom',
-      },
+    var circleClipAni = document.querySelectorAll('.circleClipAni');
 
+    circleClipAni.forEach((cCa) => {
+      var circleClipAniImg = cCa.querySelector('figure img');
+        gsap.to(circleClipAniImg, {
+        duration: 1.5,
+        clipPath: 'circle(100% at 56% 41%)',
+        opacity: 1,
+        once: true,
+        scrollTrigger: {
+          trigger: circleClipAni,
+          start: '70% bottom',
+        },
+
+      });
     });
+
+
 
     $('.overview_list ul li').on('mouseenter focusin keyup', function(){
       $(this).addClass('active').siblings().removeClass('active');
+    });
+
+    const swiper3 = new Swiper('.ud_slide', {
+      direction: 'horizontal',
+      slidesPerView: 4,
+      loop: true,
+      spaceBetween: 36,
+      speed: 800,
+      navigation: {
+          nextEl: '.ud_next',
+          prevEl: '.ud_prev',
+        },
     });
 
     window.addEventListener("resize", ScrollTrigger.refresh());
